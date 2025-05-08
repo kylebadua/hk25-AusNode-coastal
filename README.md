@@ -1,6 +1,9 @@
-# Diurnal cycle of coastal winds and rainfall  <img src='https://21centuryweather.org.au/wp-content/uploads/Hackathon-Image-WCRP-Positive-1536x736.jpg' align="right" height="139" />
+# Diurnal cycle of coastal winds and rainfall  
 
-**Project description**
+<img src='https://21centuryweather.org.au/wp-content/uploads/Hackathon-Image-WCRP-Positive-1536x736.jpg' align="centre" height="100" />
+
+
+### **Project description**
 
 The diurnal (daily) cycle in wind and rainfall is important to understand for weather forecasting in coastal regions and has an impact on the climate system through convection in the tropics. However, numerical models often have biases in the timing, amplitude, and location in the diurnal cycle compared with observations. This project will investigate the diurnal cycle in wind and rainfall in global convection-permitting models, with a focus on the offshore propagation of winds and rainfall related to the sea/land breeze circulation. In addition to providing insight to the physical processes occurring in these high-resolution models, the results may be able to be used in the future to guide the parameterisation of these small-scale processes in coarser models. Our research questions are as follows:
 
@@ -12,19 +15,27 @@ The diurnal (daily) cycle in wind and rainfall is important to understand for we
 
 See [Project description](/Project%20description.pdf) for further details.  
 
-**Project leads:** 
+### **Project leads:** 
 
 Andrew Brown, University of Melbourne (@andrewbrown31)
 
 Bethan White, University of Melbourne (@bethanwhite)
 
-<!-- **Project members:** name, affiliation/github username
+<!-- **Project members:** name, affiliation/github username -->
 
-**Collaborators:** list here other collaborators to the project. -->
+<!-- **Collaborators:** list here other collaborators to the project. -->
 
-<!-- **Data:**
-* Name, link
-* Name, link -->
+### **Data:**
+
+**ICON and UM**
+* TODO: Insert variable names
+* U and V wind components at 10 m
+* Rainfall
+* Temperature and humidity at 2 m
+* Land-sea mask
+
+**Other datasets**
+* We may use [ERA5 reanalysis data on NCI](https://dx.doi.org/10.25914/5fb115a9abecf) to compare with. So for project members, please join the [```rt52``` NCI project](https://my.nci.org.au/mancini/project/rt52/join)
 
 ## Contributing Guidelines
 
@@ -52,11 +63,18 @@ hk25-AusNode-coastal/
 ├── analysis/
 │   ├── analysis.py
 │   ├── __init__.py
-│   └── read.py
-└── tests/
-    ├── test_analysis.py
-    └── test_read.py
+│   ├── read.py
+│   └── sea_breeze/
+│       ├── load_model_data.py
+│       ├── sea_breeze_filters.py
+│       ├── sea_breeze_funcs.py
+│       └── utils.py
+├── tests/
+│   ├── test_analysis.py
+│   └── test_read.py
+
 ```
-* `analysis/` this folder will include analysis code and notebooks.
 * `tests/` this folder contains test code that verifies that your code does what it should.
+* `analysis/` this folder will include analysis code and notebooks.
+* `analysis/sea_breeze/` this folder contains generic functions to perform sea breeze identification (copied from [andrewbrown31/sea_breeze](https://github.com/andrewbrown31/sea_breeze))
 
